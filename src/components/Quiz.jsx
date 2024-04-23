@@ -56,13 +56,13 @@ const Quiz = () => {
   }, [pokemons]);
 
   useEffect(() => {
-    if (types?.length > 0) {
+    if (types?.length > 0 && pokemon?.types?.length > 0) {
       setAnswers([
         ...types?.slice(typeIndex, 3),
         { name: pokemon?.types[0]?.type?.name },
       ]);
     }
-  }, [types, typeIndex]);
+  }, [types, typeIndex, pokemon]);
 
   return (
     <div className="quiz-wrapper">
